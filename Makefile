@@ -1,7 +1,7 @@
 .PHONY: build clean
 
 build:
-	@ASEPRITE_SHA="$(ASEPRITE_SHA)" bash build.sh
+	@ASEPRITE_SHA="$(or $(ASEPRITE_SHA),main)" bash build.sh
 
 clean:
 	rm -rf output .image-id

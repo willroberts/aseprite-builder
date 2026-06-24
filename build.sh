@@ -18,10 +18,7 @@ else
     echo "==> Container image up to date, skipping build."
 fi
 
-if [[ -z "${ASEPRITE_SHA:-}" ]]; then
-    echo "Error: ASEPRITE_SHA is not set" >&2
-    exit 1
-fi
+ASEPRITE_SHA="${ASEPRITE_SHA:-main}"
 echo "==> Aseprite commit: $ASEPRITE_SHA"
 
 mkdir -p "$OUTPUT_DIR" "$SKIA_CACHE_DIR"
