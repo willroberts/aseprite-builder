@@ -47,7 +47,7 @@ podman run --rm \
         echo "/root/deps/$SKIA_DIR_NAME" > .build/main_skia_dir
         echo "/root/deps/$SKIA_DIR_NAME" > .build/HEAD_skia_dir
 
-        sed -i "s/--ssl-revoke-best-effort //" build.sh
+        sed -i "s/--ssl-revoke-best-effort //" build.sh  # Not supported on Linux.
 
         ./build.sh --auto --norun
 
